@@ -1,0 +1,12 @@
+{
+  "cube": {
+    "category": "block",
+    "subtitle": "endersadditions:cube",
+    "sounds": [ "endersadditions:cube" ]
+   },
+  "modem": {
+    "category": "block",
+    "subtitle": "endersadditions:modem",
+    "sounds": [ "endersadditions:modem" ]
+   }
+  }
