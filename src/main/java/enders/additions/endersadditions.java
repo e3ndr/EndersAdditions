@@ -2,29 +2,25 @@ package enders.additions;
 
 import java.io.File;
 
-import com.sun.istack.internal.Nullable;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import enders.additions.handlers.ConfigHandler;
-import enders.additions.handlers.modDimensions;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.DimensionManager;
 
 @Mod(modid = endersadditions.MODID, name = endersadditions.NAME, version = endersadditions.VERSION)
 public class endersadditions {
 	public static final String MODID = "endersadditions";
 	public static final String MODNAME = "Ender's Additions";
 	public static final String NAME = "Ender's Additions";
-    public static final String VERSION = "2.0R";
+    public static final String VERSION = "2.0b";
 	public static final String ACCEPTED_MINECRAFT_VERSIONS = "[1.7.10]";
 
 	@Mod.Instance("endersadditions")
@@ -45,9 +41,10 @@ public class endersadditions {
     public static Item shard_of_reality;
     public static Item modem;
     public static Item shadow_modem;
-    public static Item overworld_cookie;
+   
+
     
-    
+   
     //blocks
     public static Block magic_ore;
     public static Block missing_block;
@@ -73,10 +70,6 @@ public class endersadditions {
     	
         
         //dimensions
-        modDimensions.registerDimensions();
-        
-        
-        
         
     	//recipes and classes below
         
@@ -217,6 +210,12 @@ public class endersadditions {
         //shard_ball
     	shard_ball = new enders.additions.edibles.shard_ball(0, 0, 0, false);
     	GameRegistry.registerItem(shard_ball, "shard_ball");
+    	GameRegistry.addRecipe(new ItemStack(shard_ball), new Object[]{
+    	    	" A ",
+    	    	"ABA",
+    	    	" A ",
+    	    	'A', endersadditions.shard_ball, 'B', Items.slime_ball
+    	});
     	//end
     	
     	//shadow_modem
@@ -224,11 +223,7 @@ public class endersadditions {
     	GameRegistry.registerItem(shadow_modem, "shadow_modem");
     	//end  
     	
-    	//overworld_cookie
-    	overworld_cookie = new enders.additions.items.overworld_cookie();
-    	GameRegistry.registerItem(overworld_cookie, "overworld_cookie");
-    	//end  
-    	
+   
     	}
     	
 

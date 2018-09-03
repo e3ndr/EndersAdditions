@@ -20,7 +20,17 @@ public class modem extends Item {
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
 		if (!world.isRemote) {
 			world.playSoundAtEntity(player, "endersadditions:modem", 10f, 1.0f);
-            player.addChatMessage(new ChatComponentText("Dialing..."));    	
+            player.addChatMessage(new ChatComponentText("Dialing..."));  
+            Random rand = new Random();
+	    	int cubeWandRand = rand.nextInt(100) + 1;
+	    	if (cubeWandRand == 1) {
+	    		player.inventory.addItemStackToInventory(new ItemStack(endersadditions.shadow_modem, 1));
+	    		player.addChatMessage(new ChatComponentText("The modem has transformed!"));
+	    		player.inventory.consumeInventoryItem(this);
+		    	
+	    	}
+            
+            
 	    }
 		return itemStack;
 	}
