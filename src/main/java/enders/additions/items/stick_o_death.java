@@ -1,6 +1,7 @@
 package enders.additions.items;
 
 import enders.additions.endersadditions;
+import enders.additions.handlers.ConfigHandler;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
@@ -26,7 +27,9 @@ public class stick_o_death extends Item {
 	            world.spawnEntityInWorld(new EntityLightningBolt(world, player.posX, player.posY, player.posZ)); 
 	            ItemStack holder = player.inventory.getStackInSlot(getFirstHolder(player.inventory));
 	            player.inventory.consumeInventoryItem(this);
-	            player.attackEntityFrom(DamageSource.magic, 5f);
+	            if (ConfigHandler.enableStickODeath) {  
+	            	player.attackEntityFrom(DamageSource.magic, 100f);
+	            }
 	            // Apply NBT to holder
 	        }
 	    }

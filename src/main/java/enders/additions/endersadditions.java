@@ -40,8 +40,7 @@ public class endersadditions {
     public static Item cube_wand;
     public static Item shard_of_reality;
     public static Item modem;
-    public static Item shadow_modem;
-   
+
 
     
    
@@ -217,12 +216,6 @@ public class endersadditions {
     	    	'A', endersadditions.shard_ball, 'B', Items.slime_ball
     	});
     	//end
-    	
-    	//shadow_modem
-    	shadow_modem = new enders.additions.items.shadow_modem();
-    	GameRegistry.registerItem(shadow_modem, "shadow_modem");
-    	//end  
-    	
    
     	}
     	

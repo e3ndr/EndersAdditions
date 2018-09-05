@@ -12,6 +12,9 @@ public class ConfigHandler {
     public static boolean enableFlyWand;
     public static boolean enableJumpWand;
     public static boolean enableFastWand;
+    public static boolean enableShardOfReality_Kill;
+    public static boolean enableStickODeath;
+    public static boolean enableShardBall;
     public static boolean enableZoomiWand;
 
     
@@ -24,12 +27,15 @@ public class ConfigHandler {
 
     public static void syncConfig() {
         String category;
-        category = "Wands";
-        enableFlyWand = config.getBoolean("enableFlyWand", category, true, "Allows use of the item. Set to false to disable the usage of the item");
+        category = "Mod";
+        enableFlyWand = config.getBoolean("enableFlyWand", category, true, "");
         enableJumpWand = config.getBoolean("enableJumpWand", category, true, "");
         enableZoomiWand = config.getBoolean("enableZoomiWand", category, true, "");
         enableFastWand = config.getBoolean("enableFastWand", category, true, "");
-
+        enableShardOfReality_Kill = config.getBoolean("enableShardOfReality_Kill", category, true, "");
+        enableStickODeath = config.getBoolean("enableStickODeath", category, true, "");
+        enableShardBall = config.getBoolean("enableShardBall", category, true, "");
+ 
         config.save();
     }
 }

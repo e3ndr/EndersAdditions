@@ -3,6 +3,7 @@ package enders.additions.items;
 import java.util.Random;
 
 import enders.additions.endersadditions;
+import enders.additions.handlers.ConfigHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -27,7 +28,9 @@ public class shard_of_reality extends Item {
 	    	player.addChatMessage(new ChatComponentText("It seems that the shard has momentarily created a portal to another dimension... You now have a strange object in your hands..."));
 	    	player.inventory.consumeInventoryItem(this);
 	    	} else {
-			player.attackEntityFrom(DamageSource.magic, 1000f);
+	    		if (ConfigHandler.enableShardOfReality_Kill) {
+	    			player.attackEntityFrom(DamageSource.magic, 1000f);
+	    		}
 			player.addChatMessage(new ChatComponentText(" Remember, When eating a transdimensional shards of reality one should call poison control as you have now teleported to a random dimension where you cannot exist."));
 			player.inventory.consumeInventoryItem(this);
 	    	}
