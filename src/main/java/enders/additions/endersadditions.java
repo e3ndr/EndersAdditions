@@ -1,13 +1,17 @@
 package enders.additions;
 
 import java.io.File;
-import enders.additions.register.*;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 import enders.additions.handlers.ConfigHandler;
+import enders.additions.register.blocks;
+import enders.additions.register.items;
+import enders.additions.register.recipes;
+import enders.additions.world.worldgen.ores.Oregen;
 import net.minecraft.creativetab.CreativeTabs;
 
 @Mod(modid = endersadditions.MODID, name = endersadditions.NAME, version = endersadditions.VERSION)
@@ -33,17 +37,12 @@ public class endersadditions {
         configDir.mkdirs();
         ConfigHandler.init(new File(configDir.getPath(), MODID + ".cfg"));
     	
-        
-        items items = new enders.additions.register.items();
-        items.preInit(event);
-        
-        blocks blocks = new enders.additions.register.blocks();
-        blocks.preInit(event);
-        
-        recipes recipes = new enders.additions.register.recipes();
-        recipes.preInit(event);
-        
-        
+        enders.additions.register.blocks.preInit(event);
+        enders.additions.register.items.preInit(event);
+        enders.additions.register.recipes.preInit(event);
+
+        Oregen ore_gen = new Oregen();
+        GameRegistry.registerWorldGenerator(ore_gen, 0);
     	}
     
 	@Mod.EventHandler

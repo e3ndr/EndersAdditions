@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 public class recipes {
 	
     @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
+    public static void preInit(FMLPreInitializationEvent event) {
     	System.out.println("Registering recipes");
     	//shaped
     	GameRegistry.addRecipe(new ItemStack(enders.additions.register.items.shard_ball), new Object[]{

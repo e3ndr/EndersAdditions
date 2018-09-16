@@ -24,9 +24,9 @@ public class items {
     public static Item shard_ball;
     
     @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
+    public static void preInit(FMLPreInitializationEvent event) {
     	
-    	System.out.println("Registering Items");
+    	System.out.println("Registering items");
     	//variables n shi
     	ItemSalt = new enders.additions.edibles.ItemSalt();
     	salt_shaker = new enders.additions.items.salt_shaker();

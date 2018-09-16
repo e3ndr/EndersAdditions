@@ -15,8 +15,8 @@ public class blocks {
     public static Block BlockSalt = new enders.additions.edibles.BlockSalt();
 
     @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-    	System.out.println("Registering Blocks");
+    public static void preInit(FMLPreInitializationEvent event) {
+    	System.out.println("Registering blocks");
     	stable_cube = new enders.additions.blocks.stable_cube();
     	cube = new enders.additions.blocks.cube();
     	BlockSalt = new enders.additions.edibles.BlockSalt();
