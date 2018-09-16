@@ -24,7 +24,7 @@ public class shard_of_reality extends Item {
 	    	int shardRand = rand.nextInt(10) + 1;
 	    	if (shardRand == 1) {
 	    	world.playSoundAtEntity(player, "endersadditions:cube", 10f, 1.0f);
-	    	player.inventory.addItemStackToInventory(new ItemStack(endersadditions.modem, 1));
+	    	player.inventory.addItemStackToInventory(new ItemStack(enders.additions.register.items.modem, 1));
 	    	player.addChatMessage(new ChatComponentText("It seems that the shard has momentarily created a portal to another dimension... You now have a strange object in your hands..."));
 	    	player.inventory.consumeInventoryItem(this);
 	    	} else {

@@ -10,7 +10,7 @@ public class ItemSalt extends RecipeItemSeedFood
 
     public ItemSalt() 
     {
-        super(1, 0.3F, endersadditions.BlockSalt, Blocks.farmland);
+        super(1, 0.3F, enders.additions.register.blocks.BlockSalt, Blocks.farmland);
         setUnlocalizedName("EndersAdditions" + "_" + "salt").setMaxStackSize(16);	
         setTextureName("endersadditions:salt");
         setCreativeTab(endersadditions.tabEnder);

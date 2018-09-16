@@ -20,7 +20,7 @@ super(par1, par2Str);
 @SideOnly(Side.CLIENT)
 public ItemStack getIconItemStack(){
 // Here you make the Icon of the creative Tab
-return new ItemStack(endersadditions.ded_wand, 1, 0);
+return new ItemStack(enders.additions.register.items.ded_wand, 1, 0);
 }
 public String getTranslatedTabLabel(){
 // Here is the Name

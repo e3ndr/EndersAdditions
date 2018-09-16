@@ -22,7 +22,7 @@ public class stick_o_death extends Item {
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
 	    if (!world.isRemote) {
-	        if(player.inventory.hasItem(endersadditions.stick_o_death)) {
+	        if(player.inventory.hasItem(enders.additions.register.items.stick_o_death)) {
 	            world.createExplosion(player, player.posX, player.posY, player.posZ, 2.0F, true);
 	            world.spawnEntityInWorld(new EntityLightningBolt(world, player.posX, player.posY, player.posZ)); 
 	            ItemStack holder = player.inventory.getStackInSlot(getFirstHolder(player.inventory));
@@ -37,7 +37,7 @@ public class stick_o_death extends Item {
 	}
 	public int getFirstHolder(IInventory inventory) {
 	    for (int slot = 0; slot < inventory.getSizeInventory(); ++slot)
-	        if (inventory.getStackInSlot(slot).getItem() == endersadditions.stick_o_death)
+	        if (inventory.getStackInSlot(slot).getItem() == enders.additions.register.items.stick_o_death)
 	            return slot;
 	    return -1;
 	}

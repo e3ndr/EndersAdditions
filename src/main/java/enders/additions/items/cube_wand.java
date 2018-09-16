@@ -22,7 +22,7 @@ public class cube_wand extends Item {
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
 	    if (!world.isRemote) {
-	        if(player.inventory.hasItem(endersadditions.cube_wand)) {
+	        if(player.inventory.hasItem(enders.additions.register.items.cube_wand)) {
 	        	world.playSoundAtEntity(player, "endersadditions:cube", 10f, 1.0f);
 	            player.attackEntityFrom(DamageSource.magic, 1f);
 	            itemStack.setItemDamage(itemStack.getItemDamage() + 1);
@@ -31,7 +31,7 @@ public class cube_wand extends Item {
 	            Random rand = new Random();
 		    	int cubeWandRand = rand.nextInt(10) + 1;
 		    	if (cubeWandRand == 1) {
-		    		player.inventory.addItemStackToInventory(new ItemStack(endersadditions.shard_of_reality, 1));
+		    		player.inventory.addItemStackToInventory(new ItemStack(enders.additions.register.items.shard_of_reality, 1));
 		    		player.addChatMessage(new ChatComponentText("You pick a shard out of your skin and discover it has strange properties..."));
 		    	}
 		    	player.inventory.consumeInventoryItem(this);
@@ -41,7 +41,7 @@ public class cube_wand extends Item {
 	}
 	public int getFirstHolder(IInventory inventory) {
 	    for (int slot = 0; slot < inventory.getSizeInventory(); ++slot)
-	        if (inventory.getStackInSlot(slot).getItem() == endersadditions.cube_wand)
+	        if (inventory.getStackInSlot(slot).getItem() == enders.additions.register.items.cube_wand)
 	            return slot;
 	    return -1;
 	}

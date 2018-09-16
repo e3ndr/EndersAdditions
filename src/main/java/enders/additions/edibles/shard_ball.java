@@ -28,7 +28,7 @@ public class shard_ball extends ItemFood {
         		player.addPotionEffect(new PotionEffect(Potion.blindness.id, 40, 10));
         		player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 10, 100));
         	} else {
-        		player.inventory.addItemStackToInventory(new ItemStack(endersadditions.shard_ball, 1));
+        		player.inventory.addItemStackToInventory(new ItemStack(enders.additions.register.items.shard_ball, 1));
         		player.addChatMessage(new ChatComponentText("This Item has been disabled via config."));
         	}
         }

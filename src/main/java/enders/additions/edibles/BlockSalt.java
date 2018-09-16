@@ -32,7 +32,7 @@ public class BlockSalt extends RecipeBlockCrops
     }
     
     public Item getItemDropped(int par1, Random rand, int par2){
-    return endersadditions.ItemSalt;
+    return enders.additions.register.items.ItemSalt;
     }
     
     @Override

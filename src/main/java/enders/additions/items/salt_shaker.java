@@ -19,7 +19,7 @@ public class salt_shaker extends Item {
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
 		if (!world.isRemote) {
-	    	if(player.inventory.hasItem(endersadditions.salt_shaker)) {
+	    	if(player.inventory.hasItem(enders.additions.register.items.salt_shaker)) {
 	    	player.attackEntityFrom(DamageSource.magic, 1f);
 	    	String SaltyQuote = null;
 	    	
