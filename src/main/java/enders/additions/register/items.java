@@ -20,15 +20,15 @@ public class items {
     public static Item cube_wand;
     public static Item shard_of_reality;
     public static Item modem;
-    public static Item ItemSalt;
     public static Item shard_ball;
+    public static Item ice_cream;
+    public static Item salt;
     
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event) {
     	
     	System.out.println("Registering items");
     	//variables n shi
-    	ItemSalt = new enders.additions.edibles.ItemSalt();
     	salt_shaker = new enders.additions.items.salt_shaker();
     	ded_wand = new enders.additions.items.ded_wand();
     	strange_powder = new enders.additions.items.strange_powder();
@@ -42,10 +42,11 @@ public class items {
 		cube_wand = new enders.additions.items.cube_wand();
 		shard_ball = new enders.additions.edibles.shard_ball(0, 0, 0, false);
 		modem = new enders.additions.items.modem();
-	
+		ice_cream = new enders.additions.edibles.ice_cream(0, 0, 0, false);
+		salt = new enders.additions.edibles.salt(0, 0, 0, false);
+		
 	
 		//register
-
 		GameRegistry.registerItem(shard_ball, "shard_ball");
 		GameRegistry.registerItem(modem, "modem");
 		GameRegistry.registerItem(cube_wand, "cube_wand");
@@ -59,6 +60,7 @@ public class items {
 		GameRegistry.registerItem(fast_wand, "fast_wand");
 		GameRegistry.registerItem(jump_wand, "jump_wand");
 		GameRegistry.registerItem(zoomi_wand, "zoomi_wand");
-		GameRegistry.registerItem(ItemSalt, "Salt");
-    }
+		GameRegistry.registerItem(ice_cream, "ice_cream");
+		GameRegistry.registerItem(salt, "Salt");
+	 }
 }

@@ -24,7 +24,7 @@ public class shard_ball extends ItemFood {
     public void onFoodEaten(ItemStack itemStack, World world, EntityPlayer player) {
         super.onFoodEaten(itemStack, world, player);
         if (!world.isRemote) {
-        	if (ConfigHandler.enableFastWand) {
+        	if (ConfigHandler.enableShardBall) {
         		player.addPotionEffect(new PotionEffect(Potion.blindness.id, 40, 10));
         		player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 10, 100));
         	} else {

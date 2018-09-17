@@ -20,7 +20,6 @@ public class modem extends Item {
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
 		if (!world.isRemote) {
 			world.playSoundAtEntity(player, "endersadditions:modem", 10f, 1.0f);
-            player.addChatMessage(new ChatComponentText("Dialing..."));      
 	    }
 		return itemStack;
 	}

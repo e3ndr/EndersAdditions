@@ -32,23 +32,11 @@ public class recipes {
     			" A ",
     			'A', enders.additions.register.items.ded_wand, 'B', Blocks.tnt, 'C', enders.additions.register.items.strange_diamond
     	});
-    	GameRegistry.addRecipe(new ItemStack(enders.additions.register.items.strange_powder), new Object[]{
-    			" A ",
-    			"ABC",
-    			" A ",
-    			'A', Items.gunpowder, 'B', Items.gold_nugget, 'C', Items.redstone
-    	});
     	GameRegistry.addRecipe(new ItemStack(enders.additions.register.items.ded_wand), new Object[]{
     			"  C",
     			" B ",
     			"A  ",
     			'A', Items.stick, 'B', Items.string, 'C', Items.iron_ingot
-    	});
-    	GameRegistry.addRecipe(new ItemStack(enders.additions.register.items.ItemSalt), new Object[]{
-    			"ABA",
-    			"BCB",
-    			"ABA",
-    			'A', Items.blaze_rod, 'B', Items.wheat_seeds, 'C', Items.nether_star
     	});
     	GameRegistry.addRecipe(new ItemStack(enders.additions.register.blocks.stable_cube), new Object[]{
     			"AAA",
@@ -65,12 +53,13 @@ public class recipes {
 
     	//shapeless
     	GameRegistry.addShapelessRecipe(new ItemStack(enders.additions.register.items.fly_wand), enders.additions.register.items.stick_o_death, enders.additions.register.items.strange_powder, Items.blaze_rod, Items.feather, Items.bow);
-    	GameRegistry.addShapelessRecipe(new ItemStack(enders.additions.register.items.salt_shaker), Items.glass_bottle, enders.additions.register.items.ItemSalt);
+    	GameRegistry.addShapelessRecipe(new ItemStack(enders.additions.register.items.salt_shaker), Items.glass_bottle, enders.additions.register.items.salt);
     	GameRegistry.addShapelessRecipe(new ItemStack(enders.additions.register.items.strange_diamond), Items.gunpowder, enders.additions.register.items.strange_powder, Items.cookie, Items.diamond, Items.redstone);
     	GameRegistry.addShapelessRecipe(new ItemStack(enders.additions.register.items.zoomi_wand), enders.additions.register.items.ded_wand, enders.additions.register.items.strange_powder, Items.sugar);
     	GameRegistry.addShapelessRecipe(new ItemStack(enders.additions.register.items.jump_wand), enders.additions.register.items.ded_wand, enders.additions.register.items.strange_powder, Items.slime_ball);
-	
     	GameRegistry.addShapelessRecipe(new ItemStack(enders.additions.register.items.fast_wand), enders.additions.register.items.stick_o_death, enders.additions.register.items.strange_powder, Blocks.packed_ice, Blocks.ice);
+    	GameRegistry.addShapelessRecipe(new ItemStack(enders.additions.register.items.ice_cream), enders.additions.register.items.salt, Items.milk_bucket, Blocks.ice, Items.sugar);
+    	
     	GameRegistry.addShapelessRecipe(new ItemStack(enders.additions.register.blocks.missing_block), Blocks.wool, Blocks.wool, Blocks.cobblestone, Blocks.cobblestone);
 	
     	//smelting
