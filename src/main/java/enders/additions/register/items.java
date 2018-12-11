@@ -3,6 +3,7 @@ package enders.additions.register;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import enders.additions.endersadditions;
 import net.minecraft.item.Item;
 
 public class items {
@@ -23,11 +24,13 @@ public class items {
     public static Item shard_ball;
     public static Item ice_cream;
     public static Item salt;
+    public static Item blorox;
+    public static Item ruby;
     
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event) {
     	
-    	System.out.println("Registering items");
+    	endersadditions.logger.info("Registering items");
     	//variables n shi
     	salt_shaker = new enders.additions.items.salt_shaker();
     	ded_wand = new enders.additions.items.ded_wand();
@@ -44,6 +47,8 @@ public class items {
 		modem = new enders.additions.items.modem();
 		ice_cream = new enders.additions.edibles.ice_cream(0, 0, 0, false);
 		salt = new enders.additions.edibles.salt(0, 0, 0, false);
+		blorox = new enders.additions.edibles.blorox(0, 0, 0, false);
+		ruby = new enders.additions.edibles.ruby();
 		
 	
 		//register
@@ -62,5 +67,8 @@ public class items {
 		GameRegistry.registerItem(zoomi_wand, "zoomi_wand");
 		GameRegistry.registerItem(ice_cream, "ice_cream");
 		GameRegistry.registerItem(salt, "Salt");
+		GameRegistry.registerItem(blorox, "Blorox");
+		GameRegistry.registerItem(ruby, "Ruby");
+		
 	 }
 }

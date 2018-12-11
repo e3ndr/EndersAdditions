@@ -25,7 +25,6 @@ public class Oregen implements IWorldGenerator {
  }
  
  public void generateSurface(World world, Random random, int x, int z) {
-  System.out.println("Generating Ores");
   this.addOreSpawn(enders.additions.register.blocks.magic_ore, world, random, x, z, 16, 16, 8, 32, 1, 256);
   this.addOreSpawn(enders.additions.register.blocks.salt_ore, world, random, x, z, 16, 16, 8, 32, 1, 256);
  }
