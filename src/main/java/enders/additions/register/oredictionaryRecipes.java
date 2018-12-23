@@ -9,7 +9,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class oredictionaryRecipes {
     public static void salt() {
-    	ItemStack salt = OreDictionary.getOres("itemSalt").get(0);
+    	ItemStack salt = OreDictionary.getOres("foodSalt").get(0);
 
     	GameRegistry.addShapelessRecipe(new ItemStack(enders.additions.register.items.ice_cream), salt, Items.milk_bucket, Blocks.ice, Items.sugar);
     	GameRegistry.addShapelessRecipe(new ItemStack(enders.additions.register.items.blorox), salt, Items.glass_bottle, Items.paper);

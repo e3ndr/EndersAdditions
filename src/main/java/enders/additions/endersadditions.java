@@ -12,12 +12,12 @@ import enders.additions.handlers.ConfigHandler;
 import enders.additions.world.worldgen.ores.Oregen;
 import net.minecraft.creativetab.CreativeTabs;
 
-@Mod(modid = endersadditions.MODID, name = endersadditions.NAME, version = endersadditions.VERSION)
+@Mod(modid = endersadditions.MODID, name = endersadditions.NAME, version = endersadditions.VERSION, dependencies="before:Galacticraft Core")
 public class endersadditions {
 	public static final String MODID = "endersadditions";
 	public static final String MODNAME = "Ender's Additions";
 	public static final String NAME = "Ender's Additions";
-    public static final String VERSION = "2.2b";
+    public static final String VERSION = "2.4b";
 	public static final String ACCEPTED_MINECRAFT_VERSIONS = "[1.7.10]";
 
 	@Mod.Instance("endersadditions")
@@ -34,6 +34,7 @@ public class endersadditions {
         File configDir = new File(event.getModConfigurationDirectory() + "/");
         configDir.mkdirs();
         ConfigHandler.init(new File(configDir.getPath(), MODID + ".cfg"));
+        
     	//register
         enders.additions.register.blocks.preInit(event);
         enders.additions.register.items.preInit(event);
@@ -41,9 +42,10 @@ public class endersadditions {
         
         enders.additions.register.oreDictionary.preInit(event);
         enders.additions.register.recipes.preInit(event);
+        GameRegistry.registerFuelHandler(new enders.additions.handlers.FuelHandler());
+        
         //oregen
         Oregen ore_gen = new Oregen();
         GameRegistry.registerWorldGenerator(ore_gen, 0);
-
     	}
 }

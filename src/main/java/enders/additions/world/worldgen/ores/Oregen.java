@@ -24,12 +24,27 @@ public class Oregen implements IWorldGenerator {
   }
  }
  
+ 	/**
+ 	 * this.addOreSpawn(block, world, random, posX, posZ, maxX, maxZ, maxVeinSize, chancesToSpawn, minY, maxY);
+ 	 *@param block - block
+ 	 *@param world - world
+ 	 *@param random - random
+ 	 *@param posX - x
+ 	 *@param posZ - z
+ 	 *@param maxX - chunk
+ 	 *@param maxZ - chunk
+ 	 *@param maxVeinSize - integer
+ 	 *@param chancesToSpawn - integer
+ 	 *@param minY - 0-256
+ 	 *@param maxY  - 0-256
+ 	 **/
  public void generateSurface(World world, Random random, int x, int z) {
-  this.addOreSpawn(enders.additions.register.blocks.magic_ore, world, random, x, z, 16, 16, 8, 32, 1, 256);
-  this.addOreSpawn(enders.additions.register.blocks.salt_ore, world, random, x, z, 16, 16, 8, 32, 1, 256);
+	 this.addOreSpawn(enders.additions.register.blocks.magic_ore, world, random, x, z, 16, 16, 8, 16, 1, 256);
+	 this.addOreSpawn(enders.additions.register.blocks.salt_ore, world, random, x, z, 16, 16, 8, 8, 1, 256);
+	 this.addOreSpawn(enders.additions.register.blocks.ruby_ore, world, random, x, z, 16, 16, 4, 8, 12, 36);
  }
- 
  public void generateNether(World world, Random random, int x, int z) {}
+ 
  
  public void addOreSpawn(Block block, World world, Random random, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY) {
   for (int i = 0; i < chancesToSpawn; i++) {

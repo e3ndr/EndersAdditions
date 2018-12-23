@@ -19,12 +19,12 @@ public class blocks {
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event) {
     	endersadditions.logger.info("Registering blocks");
-    	stable_cube = new enders.additions.blocks.stable_cube();
-    	cube = new enders.additions.blocks.cube();
-		magic_ore = new enders.additions.blocks.magic_ore();
-		missing_block = new enders.additions.blocks.missing_block();
-		salt_ore = new enders.additions.blocks.salt_ore();
-		ruby_ore = new enders.additions.blocks.ruby_ore();
+    	stable_cube = new enders.additions.blocks.blockStable_cube();
+    	cube = new enders.additions.blocks.blockCube();
+		magic_ore = new enders.additions.blocks.oreMagic_ore();
+		missing_block = new enders.additions.blocks.blockMissing_block();
+		salt_ore = new enders.additions.blocks.oreSalt_ore();
+		ruby_ore = new enders.additions.blocks.oreRuby_ore();
 		
 		
     }

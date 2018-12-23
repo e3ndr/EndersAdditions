@@ -26,29 +26,32 @@ public class items {
     public static Item salt;
     public static Item blorox;
     public static Item ruby;
+    public static Item boof;
+    
     
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event) {
     	
     	endersadditions.logger.info("Registering items");
     	//variables n shi
-    	salt_shaker = new enders.additions.items.salt_shaker();
-    	ded_wand = new enders.additions.items.ded_wand();
-    	strange_powder = new enders.additions.items.strange_powder();
-    	strange_diamond = new enders.additions.items.strange_diamond();
-    	stick_o_death = new enders.additions.items.stick_o_death();
-    	zoomi_wand = new enders.additions.items.zoomi_wand();
-    	jump_wand = new enders.additions.items.jump_wand();
-    	fast_wand = new enders.additions.items.fast_wand();
-		fly_wand = new enders.additions.items.fly_wand();
-		shard_of_reality = new enders.additions.items.shard_of_reality();
-		cube_wand = new enders.additions.items.cube_wand();
+    	salt_shaker = new enders.additions.items.itemSalt_shaker();
+    	ded_wand = new enders.additions.items.itemDed_wand();
+    	strange_powder = new enders.additions.items.dustStrange_powder();
+    	strange_diamond = new enders.additions.items.ingotStrange_diamond();
+    	stick_o_death = new enders.additions.items.itemStick_o_death();
+    	zoomi_wand = new enders.additions.items.itemZoomi_wand();
+    	jump_wand = new enders.additions.items.itemJump_wand();
+    	fast_wand = new enders.additions.items.itemFast_wand();
+		fly_wand = new enders.additions.items.itemFly_wand();
+		shard_of_reality = new enders.additions.items.itemShard_of_reality();
+		cube_wand = new enders.additions.items.itemCube_wand();
 		shard_ball = new enders.additions.edibles.shard_ball(0, 0, 0, false);
-		modem = new enders.additions.items.modem();
+		modem = new enders.additions.items.itemModem();
 		ice_cream = new enders.additions.edibles.ice_cream(0, 0, 0, false);
 		salt = new enders.additions.edibles.salt(0, 0, 0, false);
 		blorox = new enders.additions.edibles.blorox(0, 0, 0, false);
-		ruby = new enders.additions.edibles.ruby();
+		ruby = new enders.additions.items.ingotRuby();
+		boof = new enders.additions.items.itemBoof();
 		
 	
 		//register
@@ -69,6 +72,7 @@ public class items {
 		GameRegistry.registerItem(salt, "Salt");
 		GameRegistry.registerItem(blorox, "Blorox");
 		GameRegistry.registerItem(ruby, "Ruby");
+		GameRegistry.registerItem(boof, "Boof");
 		
 	 }
 }

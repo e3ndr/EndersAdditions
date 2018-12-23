@@ -82,6 +82,12 @@ public class recipes {
 	    		" B ",
 	    		'A', enders.additions.register.items.ruby, 'B', Items.stick
     	});
+    	GameRegistry.addRecipe(new ItemStack(enders.additions.register.items.boof), new Object[]{
+    			" A ",
+    			"ABA",
+	    		" A ",
+	    		'A', Items.paper, 'B', Blocks.tallgrass
+    	});
     	
     	//shapeless
     	GameRegistry.addShapelessRecipe(new ItemStack(enders.additions.register.items.fly_wand), enders.additions.register.items.stick_o_death, enders.additions.register.items.strange_powder, Items.blaze_rod, Items.feather, Items.bow);

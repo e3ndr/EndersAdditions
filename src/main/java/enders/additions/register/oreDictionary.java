@@ -11,10 +11,7 @@ public class oreDictionary {
     public static void preInit(FMLPreInitializationEvent event) {
     	endersadditions.logger.info("Registering OreDictionary");
     	OreDictionary.registerOre("foodSalt", new ItemStack(enders.additions.register.items.salt, 1, 0));
-    	OreDictionary.registerOre("itemSalt", new ItemStack(enders.additions.register.items.salt, 1, 0));
-    	OreDictionary.registerOre("Salt", new ItemStack(enders.additions.register.items.salt, 1, 0));
-    	OreDictionary.registerOre("salt", new ItemStack(enders.additions.register.items.salt, 1, 0));
-    	OreDictionary.registerOre("dustSalt", new ItemStack(enders.additions.register.items.salt, 1, 0));
+    	OreDictionary.registerOre("ingotRuby", new ItemStack(enders.additions.register.items.ruby, 1, 0));
         
     }
 }
