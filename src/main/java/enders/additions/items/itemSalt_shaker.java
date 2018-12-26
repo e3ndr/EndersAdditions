@@ -7,7 +7,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentTranslation;
-import net.minecraft.util.DamageSource;
+import enders.additions.handlers.damageSource;
 import net.minecraft.world.World;
 
 public class itemSalt_shaker extends Item {
@@ -20,7 +20,7 @@ public class itemSalt_shaker extends Item {
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
 		if (!world.isRemote) {
 	    	if(player.inventory.hasItem(enders.additions.register.items.salt_shaker)) {
-	    	player.attackEntityFrom(DamageSource.magic, 1f);
+	    	player.attackEntityFrom(damageSource.salt, 1f);
 	    	String SaltyQuote = null;
 	    	
 	        //randomizer code

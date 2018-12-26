@@ -11,7 +11,7 @@ public class FuelHandler implements IFuelHandler {
 	@Override
 	public int getBurnTime(ItemStack fuel) {
 		Item itemFuel = fuel.getItem();
-		if (itemFuel == enders.additions.register.items.strange_powder) {
+		if (itemFuel == enders.additions.register.items.magic_dust) {
 			return 2400; // ammount of time
 		} else {
 			return 0; // if not listed it returns 0 burn time
