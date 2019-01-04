@@ -1,0 +1,11 @@
+3.0 (Bouncy Update):
+  Bouncy Boots
+  Slime Wand
+  Jet Boots
+  Magic Dust as a burnable
+  Rubies! (and the assorted tools)
+  Magic Ingot! (and the assorted tools)
+  Magic Compound, as a crafting item for MagicIngot
+  Blorox
+  Boof (for your boofy needs)
+  + Everything I do not want to list since 1.0 (2.0 wasn't released as it had too many bugs)
