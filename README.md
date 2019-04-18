@@ -4,7 +4,7 @@
 We all know and love EssentialsX, but it sorta lacks integration and order. With BukkitBasics you are immediately aware of customization via lang.txt and the ability to change options via config.yml. It even includes native integration with GroefPrevention and SavageFactions!
 
 ## That's cool bro, but how do I compile it?  
-Simple! ([Eclipse](https://www.eclise.org)  
+Simple! ([Eclipse](https://www.eclise.org))  
 **1)** Open a new workspace.  
 **2)** Drop the BukkitBasics source into that folder.  
 **3)** Right click the project explorer and select Import.  
