@@ -1,0 +1,11 @@
+.gradle/
+
+bin/
+build/
+
+# Eclipse
+/eclipse
+.settings/
+.project
+.classpath
+.metadata

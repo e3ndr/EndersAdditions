@@ -1,0 +1,12 @@
+package xyz.e3ndr.endersadditions;
+
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+
+public class ServerProxy extends CommonProxy {
+
+    @Override
+    public void preInit(FMLPreInitializationEvent event) {
+        super.preInit(event);
+    }
+
+}

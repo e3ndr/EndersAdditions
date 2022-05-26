@@ -1,16 +1,16 @@
 [
-{
-  "modid": "endersadditions",
-  "name": "Ender'sAdditions",
-  "description": "Concluding, Verb, bring (something) to an end. Additives, Noun, a substance added to something in small quantities, typically to improve or preserve it.",
-  "version": "3.0R",
-  "mcversion": "1.7.10",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["EnderVampire"],
-  "credits": "that one hydrogen atom that fused into helium and that silicone one that fused into iron, theyre litty.",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
-}
+	{
+		"modid": "endersadditions",
+		"name": "Ender's Additions",
+		"description": "A silly little mod.",
+		"version": "3.0R",
+		"mcversion": "1.7.10",
+		"url": "",
+		"updateUrl": "",
+		"authorList": ["EnderVampire"],
+		"credits": "",
+		"logoFile": "",
+		"screenshots": [],
+		"dependencies": []
+	}
 ]
