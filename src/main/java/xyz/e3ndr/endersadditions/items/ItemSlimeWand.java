@@ -34,4 +34,5 @@ public class ItemSlimeWand extends GenericItem {
         }
         return itemStack;
     }
+
 }

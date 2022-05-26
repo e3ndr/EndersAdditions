@@ -8,6 +8,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
 import xyz.e3ndr.endersadditions.handlers.TabEnder;
+import xyz.e3ndr.endersadditions.proxies.CommonProxy;
 
 @Mod(modid = EndersAdditions.MODID, name = EndersAdditions.NAME, version = EndersAdditions.VERSION)
 public class EndersAdditions {
@@ -27,7 +28,7 @@ public class EndersAdditions {
         "Ender's Additions"
     );
 
-    @SidedProxy(clientSide = "xyz.e3ndr.endersadditions.ClientProxy", serverSide = "xyz.e3ndr.endersadditions.ServerProxy")
+    @SidedProxy(clientSide = "xyz.e3ndr.endersadditions.proxies.ClientProxy", serverSide = "xyz.e3ndr.endersadditions.proxies.ServerProxy")
     public static CommonProxy proxy;
 
     @Mod.EventHandler

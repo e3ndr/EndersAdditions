@@ -12,9 +12,10 @@ public class FuelHandler implements IFuelHandler {
         Item itemFuel = fuel.getItem();
 
         if (itemFuel == Registry.itemMagicDust) {
-            return 2400; // ammount of time
+            return 2400; // amount of time
         } else {
             return 0; // if not listed it returns 0 burn time
         }
     }
+
 }

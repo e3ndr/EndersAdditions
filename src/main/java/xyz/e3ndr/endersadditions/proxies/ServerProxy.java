@@ -1,4 +1,4 @@
-package xyz.e3ndr.endersadditions;
+package xyz.e3ndr.endersadditions.proxies;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 

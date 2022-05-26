@@ -1,7 +1,8 @@
-package xyz.e3ndr.endersadditions;
+package xyz.e3ndr.endersadditions.proxies;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import xyz.e3ndr.endersadditions.Registry;
 import xyz.e3ndr.endersadditions.handlers.FuelHandler;
 import xyz.e3ndr.endersadditions.registry.RecipesRegistry;
 import xyz.e3ndr.endersadditions.world.Oregen;
