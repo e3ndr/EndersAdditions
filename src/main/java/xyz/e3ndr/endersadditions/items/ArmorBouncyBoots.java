@@ -7,6 +7,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
@@ -32,6 +34,11 @@ public class ArmorBouncyBoots extends ItemArmor {
         return "endersadditions:textures/models/armor/slime.png";
     }
 
+    @Override
+    public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
+        player.addPotionEffect(new PotionEffect(Potion.jump.getId(), 0, 1));
+    }
+
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onFall(LivingFallEvent event) {
         World world = event.entity.worldObj;
@@ -49,11 +56,14 @@ public class ArmorBouncyBoots extends ItemArmor {
             return;
         }
 
-        // Happen on both sides.
-
-        if (!player.isSneaking()) {
-            world.playSound(player.posX, player.posY, player.posZ, "mob.slime.small", 10f, 1.0f, false);
+        // Make the sound louder if the fall distance is > 4.
+        if (event.distance > 4) {
+            world.playSound(player.posX, player.posY, player.posZ, "mob.slime.small", 2f, 1.0f, false);
+        } else {
+            world.playSound(player.posX, player.posY, player.posZ, "mob.slime.small", .5f, 1.0f, false);
         }
+
+        // Happens on both sides.
 
         event.setCanceled(true);
         event.distance = 0;
