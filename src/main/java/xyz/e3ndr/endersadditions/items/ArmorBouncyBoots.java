@@ -15,11 +15,9 @@ import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 import xyz.e3ndr.endersadditions.EndersAdditions;
 import xyz.e3ndr.endersadditions.Registry;
+import xyz.e3ndr.endersadditions.proxies.CommonProxy;
 
 public class ArmorBouncyBoots extends ItemArmor {
-    private static final float PI = (float) Math.PI; // Cache.
-    private static final double LAUNCH_FORCE = 2.0;
-    private static final int FOOD_COST = 4;
 
     public ArmorBouncyBoots(ArmorMaterial armormaterial, int renderID) {
         super(armormaterial, renderID, 3);
@@ -40,6 +38,8 @@ public class ArmorBouncyBoots extends ItemArmor {
 
     @Override
     public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
+        if (CommonProxy.isServerSide()) return;
+
         // Make the player sink in water.
         if (player.isInWater()) {
             player.velocityChanged = true;
@@ -49,6 +49,8 @@ public class ArmorBouncyBoots extends ItemArmor {
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onJump(LivingJumpEvent event) {
+        if (CommonProxy.isServerSide()) return;
+
         // Make sure this is for a player.
         if (!(event.entityLiving instanceof EntityPlayer)) {
             return;
@@ -63,6 +65,10 @@ public class ArmorBouncyBoots extends ItemArmor {
         }
 
         if (player.isSneaking()) {
+            final float PI = (float) Math.PI; // Cache.
+            final double LAUNCH_FORCE = 2.0;
+            final int FOOD_COST = 4;
+
             // Deduct food points.
             FoodStats food = player.getFoodStats();
             int foodLevel = food.getFoodLevel();
@@ -91,6 +97,7 @@ public class ArmorBouncyBoots extends ItemArmor {
             player.motionX = motionX;
             player.motionY = motionY;
             player.motionZ = motionZ;
+            player.isAirBorne = true;
             player.velocityChanged = true; // required for some strange reason
         }
     }
@@ -110,15 +117,50 @@ public class ArmorBouncyBoots extends ItemArmor {
             return;
         }
 
-        // Make the sound louder if the fall distance is > 4.
-        float volume = event.distance > 4 ? 2f : .5f;
-        event.entity.worldObj.playSound(player.posX, player.posY, player.posZ, "mob.slime.small", volume, 1.0f, false);
-
         // Happens on both sides.
         event.setCanceled(true);
-        event.distance = 0;
-        player.fallDistance = 0;
 
+        if (CommonProxy.isServerSide()) return;
+
+        // Make the sound louder if the fall distance is > 4.
+        float volume = event.distance > 4 ? 2f : .5f;
+        player.worldObj.playSoundAtEntity(player, "mob.slime.small", volume, 1.0f);
+
+        if (!player.isSneaking()) {
+            // We must first figure out the velocity of the player, since the motionY is
+            // wrong. https://minecraft.fandom.com/wiki/Entity#Motion_of_entities
+            final double GRAV_ACCELERATION = 0.08; // blocks/tick
+            final double TERMINAL_VELOCITY = 3.92; // blocks/tick
+            // vel = sqrt(2(ACC)(HEIGHT))
+
+            double velocity = Math.sqrt(2 * GRAV_ACCELERATION * player.fallDistance);
+            if (velocity > TERMINAL_VELOCITY) {
+                // Clamp.
+                velocity = TERMINAL_VELOCITY;
+            }
+
+            final double MIN_VELOCITY = 0.3;
+            if (velocity >= MIN_VELOCITY) {
+                final double BOUNCE_DECAY = 0.55;
+                final double BOUNCE_TRANSLATION_MULTIPLIER = 2.2;
+
+//                System.out.println("Fall distance:   " + player.fallDistance);
+//                System.out.println("Fall velocity:   " + velocity);
+//                System.out.println("Fall Motion X:   " + player.motionX);
+//                System.out.println("Fall Motion Z:   " + player.motionZ);
+
+                // Make the player "bounce"
+                player.motionY = velocity * BOUNCE_DECAY;
+                player.motionX *= BOUNCE_TRANSLATION_MULTIPLIER;
+                player.motionZ *= BOUNCE_TRANSLATION_MULTIPLIER;
+                player.isAirBorne = true;
+                player.velocityChanged = true;
+
+//                System.out.println("Bounce velocity: " + player.motionY);
+//                System.out.println("Bounce motion X: " + player.motionX);
+//                System.out.println("Bounce motion Z: " + player.motionZ);
+//                System.out.println();
+            }
         }
     }
 
