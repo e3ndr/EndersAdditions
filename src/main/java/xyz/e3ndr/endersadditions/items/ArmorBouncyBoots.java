@@ -97,7 +97,7 @@ public class ArmorBouncyBoots extends ItemArmor {
         FoodStats food = player.getFoodStats();
         int foodLevel = food.getFoodLevel();
 
-        if (foodLevel =< FOOD_COST) {
+        if (foodLevel <= FOOD_COST) {
             return;
         }
 
