@@ -83,14 +83,10 @@ public class ArmorBouncyBoots extends ItemArmor {
         }
 
         // Make the sound louder if the fall distance is > 4.
-        if (event.distance > 4) {
-            world.playSound(player.posX, player.posY, player.posZ, "mob.slime.small", 2f, 1.0f, false);
-        } else {
-            world.playSound(player.posX, player.posY, player.posZ, "mob.slime.small", .5f, 1.0f, false);
-        }
+        float volume = event.distance > 4 ? 2f : .5f;
+        event.entity.worldObj.playSound(player.posX, player.posY, player.posZ, "mob.slime.small", volume, 1.0f, false);
 
         // Happens on both sides.
-
         event.setCanceled(true);
         event.distance = 0;
         player.fallDistance = 0;
