@@ -63,7 +63,35 @@ public class ArmorBouncyBoots extends ItemArmor {
         }
 
         if (player.isSneaking()) {
-            launch(player);
+            // Deduct food points.
+            FoodStats food = player.getFoodStats();
+            int foodLevel = food.getFoodLevel();
+
+            if (foodLevel <= FOOD_COST) {
+                return;
+            }
+
+            foodLevel -= FOOD_COST;
+            food.setFoodLevel(foodLevel);
+
+            // Calculate the launch direction.
+            final float pitch = player.rotationPitch;
+            final float yaw = player.rotationYaw;
+
+            double motionX = -MathHelper.sin(yaw / 180.0F * PI) * MathHelper.cos(pitch / 180.0F * PI);
+            double motionZ = +MathHelper.cos(yaw / 180.0F * PI) * MathHelper.cos(pitch / 180.0F * PI);
+            double motionY = -MathHelper.sin((pitch) / 180.0F * PI);
+
+            // Apply force.
+            motionX *= LAUNCH_FORCE;
+            motionY *= LAUNCH_FORCE;
+            motionZ *= LAUNCH_FORCE;
+
+            // Apply to player.
+            player.motionX = motionX;
+            player.motionY = motionY;
+            player.motionZ = motionZ;
+            player.velocityChanged = true; // required for some strange reason
         }
     }
 
@@ -90,38 +118,8 @@ public class ArmorBouncyBoots extends ItemArmor {
         event.setCanceled(true);
         event.distance = 0;
         player.fallDistance = 0;
-    }
 
-    public static void launch(EntityPlayer player) {
-        // Deduct food points.
-        FoodStats food = player.getFoodStats();
-        int foodLevel = food.getFoodLevel();
-
-        if (foodLevel <= FOOD_COST) {
-            return;
         }
-
-        foodLevel -= FOOD_COST;
-        food.setFoodLevel(foodLevel);
-
-        // Calculate the launch direction.
-        final float pitch = player.rotationPitch;
-        final float yaw = player.rotationYaw;
-
-        double motionX = -MathHelper.sin(yaw / 180.0F * PI) * MathHelper.cos(pitch / 180.0F * PI);
-        double motionZ = +MathHelper.cos(yaw / 180.0F * PI) * MathHelper.cos(pitch / 180.0F * PI);
-        double motionY = -MathHelper.sin((pitch) / 180.0F * PI);
-
-        // Apply force.
-        motionX *= LAUNCH_FORCE;
-        motionY *= LAUNCH_FORCE;
-        motionZ *= LAUNCH_FORCE;
-
-        // Apply to player.
-        player.motionX = motionX;
-        player.motionY = motionY;
-        player.motionZ = motionZ;
-        player.velocityChanged = true; // required for some strange reason
     }
 
 }
