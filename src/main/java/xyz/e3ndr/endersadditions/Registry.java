@@ -21,7 +21,6 @@ import xyz.e3ndr.endersadditions.items.GenericOre;
 import xyz.e3ndr.endersadditions.items.ItemBoof;
 import xyz.e3ndr.endersadditions.items.ItemModem;
 import xyz.e3ndr.endersadditions.items.ItemSaltShaker;
-import xyz.e3ndr.endersadditions.items.ItemSlimeWand;
 import xyz.e3ndr.endersadditions.items.ItemWand;
 import xyz.e3ndr.endersadditions.items.ToolAxe;
 import xyz.e3ndr.endersadditions.items.ToolHoe;
@@ -105,7 +104,6 @@ public class Registry {
     public static Item itemSaltShaker = new ItemSaltShaker();
 
     public static Item itemWand = new ItemWand();
-    public static Item itemSlimeWand = new ItemSlimeWand();
 
     /* ------------ */
     /* Tools        */

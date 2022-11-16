@@ -130,14 +130,6 @@ public class RecipesRegistry {
                 'A', Items.slime_ball,
         });
         
-        GameRegistry.addRecipe(new ItemStack(Registry.itemSlimeWand), new Object[] {
-                "  B",
-                " A ",
-                "   ",
-                'A', Registry.itemWand,
-                'B', Items.slime_ball
-        });
-        
         // shapeless
         GameRegistry.addShapelessRecipe(
             new ItemStack(Registry.blockMissingBlock),
