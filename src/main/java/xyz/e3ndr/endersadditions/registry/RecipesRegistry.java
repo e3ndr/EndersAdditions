@@ -125,9 +125,10 @@ public class RecipesRegistry {
         
         GameRegistry.addRecipe(new ItemStack(Registry.armorBouncyBoots), new Object[] {
                 "   ",
-                "A A",
+                "ABA",
                 "A A",
                 'A', Items.slime_ball,
+                'B', Registry.itemWand,
         });
         
         // shapeless
