@@ -7,8 +7,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
@@ -36,7 +34,11 @@ public class ArmorBouncyBoots extends ItemArmor {
 
     @Override
     public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
-        player.addPotionEffect(new PotionEffect(Potion.jump.getId(), 0, 1));
+        // Make the player sink in water.
+        if (player.isInWater()) {
+            player.velocityChanged = true;
+            player.motionY = -.2f;
+        }
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
