@@ -15,7 +15,7 @@ public class EndersAdditions {
     public static final String MODID = "endersadditions";
     public static final String MODNAME = "Ender's Additions";
     public static final String NAME = "Ender's Additions";
-    public static final String VERSION = "3.0R";
+    public static final String VERSION = "4.0R";
     public static final String ACCEPTED_MINECRAFT_VERSIONS = "[1.7.10]";
 
     @Mod.Instance("endersadditions")
