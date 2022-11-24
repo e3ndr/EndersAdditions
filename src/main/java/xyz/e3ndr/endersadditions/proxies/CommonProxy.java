@@ -8,7 +8,6 @@ import xyz.e3ndr.endersadditions.registry.RecipesRegistry;
 import xyz.e3ndr.endersadditions.world.Oregen;
 
 public class CommonProxy {
-    protected static boolean isServerSide = false;
 
     public void preInit(FMLPreInitializationEvent event) {
         // Register
@@ -19,10 +18,6 @@ public class CommonProxy {
         // Oregen
         Oregen ore_gen = new Oregen();
         GameRegistry.registerWorldGenerator(ore_gen, 0);
-    }
-
-    public static boolean isServerSide() {
-        return isServerSide;
     }
 
 }

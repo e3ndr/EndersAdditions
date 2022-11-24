@@ -6,7 +6,6 @@ public class ServerProxy extends CommonProxy {
 
     @Override
     public void preInit(FMLPreInitializationEvent event) {
-        isServerSide = true;
         super.preInit(event);
     }
 
