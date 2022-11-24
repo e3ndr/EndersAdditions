@@ -7,7 +7,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.FoodStats;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
@@ -67,18 +66,6 @@ public class ArmorBouncyBoots extends ItemArmor {
         if (player.isSneaking()) {
             final float PI = (float) Math.PI; // Cache.
             final double LAUNCH_FORCE = 2.0;
-            final int FOOD_COST = 4;
-
-            // Deduct food points.
-            FoodStats food = player.getFoodStats();
-            int foodLevel = food.getFoodLevel();
-
-            if (foodLevel <= FOOD_COST) {
-                return;
-            }
-
-            foodLevel -= FOOD_COST;
-            food.setFoodLevel(foodLevel);
 
             // Calculate the launch direction.
             final float pitch = player.rotationPitch;
