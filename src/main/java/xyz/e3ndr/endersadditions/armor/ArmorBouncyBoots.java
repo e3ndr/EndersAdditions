@@ -36,8 +36,27 @@ public class ArmorBouncyBoots extends ArmorBouncyBase {
     public void addInformation(ItemStack itemStack, EntityPlayer player, List lines, boolean p_77624_4_) {
         if (lines == null) return;
         lines.add("Makes you bounce when you land on the ground!");
-        lines.add("Also produces a slopping sound when you walk.");
+//        lines.add("Also produces a slopping sound when you walk.");
     }
+
+//    @Override
+//    public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
+//        super.onArmorTick(world, player, itemStack); // Make sure that the sink code is called!
+//
+//        if (world.isRemote) return; // Run this code on the server.
+//
+//        final long SOUND_EVERY = 5/*ticks*/;
+//
+//        boolean isOnGround = player.onGround;
+//        boolean isMoving = TODO;
+//        boolean isSoundTick = world.getTotalWorldTime() % SOUND_EVERY == 0;
+//
+//        System.out.println("isOnGround=" + isOnGround + " isMoving=" + isMoving + " isSoundTick=" + isSoundTick);
+//
+//        if (!isOnGround || !isMoving || !isSoundTick) return;
+//
+//        world.playSoundAtEntity(player, "mob.slime.small", 2f, 1.0f);
+//    }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onFall(LivingFallEvent event) {
