@@ -7,6 +7,9 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
 import xyz.e3ndr.endersadditions.handlers.TabEnder;
 import xyz.e3ndr.endersadditions.proxies.CommonProxy;
 
@@ -44,6 +47,33 @@ public class EndersAdditions {
 
     public static String generateTextureName(String id) {
         return "endersadditions:" + id;
+    }
+
+    public static boolean isWearing(EntityPlayer player, ItemArmor armor) {
+        ItemStack armorItem = null;
+
+        // Ugh.
+        switch (armor.armorType) {
+            case 0:
+                armorItem = player.getCurrentArmor(3);
+                break;
+            case 1:
+                armorItem = player.getCurrentArmor(2);
+                break;
+            case 2:
+                armorItem = player.getCurrentArmor(1);
+                break;
+            case 3:
+                armorItem = player.getCurrentArmor(0);
+                break;
+        }
+
+        // Make sure the player is wearing the boots.
+        if ((armorItem == null) || (armorItem.getItem() != armor)) {
+            return false;
+        }
+
+        return true;
     }
 
 }

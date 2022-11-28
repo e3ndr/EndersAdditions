@@ -5,13 +5,15 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
 import xyz.e3ndr.endersadditions.armor.ArmorBouncyBoots;
+import xyz.e3ndr.endersadditions.armor.ArmorBouncyChestplate;
+import xyz.e3ndr.endersadditions.armor.ArmorBouncyLeggings;
 import xyz.e3ndr.endersadditions.food.FoodBlorox;
 import xyz.e3ndr.endersadditions.food.FoodIceCream;
 import xyz.e3ndr.endersadditions.food.FoodSalt;
@@ -31,30 +33,12 @@ import xyz.e3ndr.endersadditions.tools.ToolSword;
 public class Registry {
 
     /*
-     * @param name
-     * @param durability
-     * @param reduction
-     * @param enchantability
-     */
-    private static final ArmorMaterial dummyArmorMaterial = EnumHelper.addArmorMaterial(
-        "dummy",
-        10,
-        new int[] {
-                1,
-                1,
-                1,
-                1
-        },
-        0
-    );
-
-    /*
      * name
      * level          (0-3)
      * uses
-     * strength       (wood = 2.0F, stone = 4.0F, iron = 6.0F, diamond = 8.0F, gold 12.0F)
+     * strength       (wood = 2.0F, stone = 4.0F, iron = 6.0F, diamond = 8.0F, gold = 12.0F)
      * damage 
-     * enchantability (wood = 15, stone = 5, iron = 14, diamond = 10, gold  22)
+     * enchantability (wood = 15, stone = 5, iron = 14, diamond = 10, gold = 22)
      */
     private static final Item.ToolMaterial toolMaterialRuby = EnumHelper.addToolMaterial("Ruby", 2, 224, 6.0F, 1F, 5);
     private static final Item.ToolMaterial toolMaterialMagic = EnumHelper.addToolMaterial("Magic", 4, 2000, 12.0F, 1F, 0);
@@ -67,7 +51,9 @@ public class Registry {
     /* ------------ */
     /* Armor        */
     /* ------------ */
-    public static Item armorBouncyBoots = new ArmorBouncyBoots(dummyArmorMaterial, 5);
+    public static ItemArmor armorBouncyChestplate = new ArmorBouncyChestplate();
+    public static ItemArmor armorBouncyLeggings = new ArmorBouncyLeggings();
+    public static ItemArmor armorBouncyBoots = new ArmorBouncyBoots();
 
     /* ------------ */
     /* Blocks       */
