@@ -46,7 +46,7 @@ public class ArmorBouncyLeggings extends ArmorBouncyBase {
         }
 
         final float PI = (float) Math.PI; // Cache.
-        final double LAUNCH_FORCE = 2.0;
+        final double LAUNCH_FORCE = 2.15;
         final double MIN_Y = .5;
 
         // Calculate the launch direction.
