@@ -122,7 +122,23 @@ public class RecipesRegistry {
                 'A', Registry.itemMagicIngot,
                 'B', Items.stick
         });
-        
+
+        GameRegistry.addRecipe(new ItemStack(Registry.armorBouncyChestplate), new Object[] {
+                "ABA",
+                "AAA",
+                "AAA",
+                'A', Items.slime_ball,
+                'B', Registry.itemWand,
+        });
+
+        GameRegistry.addRecipe(new ItemStack(Registry.armorBouncyLeggings), new Object[] {
+                "AAA",
+                "ABA",
+                "A A",
+                'A', Items.slime_ball,
+                'B', Registry.itemWand,
+        });
+
         GameRegistry.addRecipe(new ItemStack(Registry.armorBouncyBoots), new Object[] {
                 "   ",
                 "ABA",
