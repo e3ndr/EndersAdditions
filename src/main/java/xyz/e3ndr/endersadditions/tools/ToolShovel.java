@@ -1,12 +1,12 @@
-package xyz.e3ndr.endersadditions.items;
+package xyz.e3ndr.endersadditions.tools;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.item.ItemHoe;
+import net.minecraft.item.ItemSpade;
 import xyz.e3ndr.endersadditions.EndersAdditions;
 
-public class ToolHoe extends ItemHoe {
+public class ToolShovel extends ItemSpade {
 
-    public ToolHoe(ToolMaterial material, String name) {
+    public ToolShovel(ToolMaterial material, String name) {
         super(material);
 
         this.setUnlocalizedName(EndersAdditions.generateUnlocalizedName(name));

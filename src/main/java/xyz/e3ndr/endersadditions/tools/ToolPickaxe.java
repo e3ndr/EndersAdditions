@@ -1,12 +1,12 @@
-package xyz.e3ndr.endersadditions.items;
+package xyz.e3ndr.endersadditions.tools;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemPickaxe;
 import xyz.e3ndr.endersadditions.EndersAdditions;
 
-public class ToolAxe extends ItemAxe {
+public class ToolPickaxe extends ItemPickaxe {
 
-    public ToolAxe(ToolMaterial material, String name) {
+    public ToolPickaxe(ToolMaterial material, String name) {
         super(material);
 
         this.setUnlocalizedName(EndersAdditions.generateUnlocalizedName(name));

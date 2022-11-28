@@ -11,10 +11,10 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
-import xyz.e3ndr.endersadditions.items.ArmorBouncyBoots;
-import xyz.e3ndr.endersadditions.items.FoodBlorox;
-import xyz.e3ndr.endersadditions.items.FoodIceCream;
-import xyz.e3ndr.endersadditions.items.FoodSalt;
+import xyz.e3ndr.endersadditions.armor.ArmorBouncyBoots;
+import xyz.e3ndr.endersadditions.food.FoodBlorox;
+import xyz.e3ndr.endersadditions.food.FoodIceCream;
+import xyz.e3ndr.endersadditions.food.FoodSalt;
 import xyz.e3ndr.endersadditions.items.GenericBlock;
 import xyz.e3ndr.endersadditions.items.GenericItem;
 import xyz.e3ndr.endersadditions.items.GenericOre;
@@ -22,11 +22,11 @@ import xyz.e3ndr.endersadditions.items.ItemBoof;
 import xyz.e3ndr.endersadditions.items.ItemModem;
 import xyz.e3ndr.endersadditions.items.ItemSaltShaker;
 import xyz.e3ndr.endersadditions.items.ItemWand;
-import xyz.e3ndr.endersadditions.items.ToolAxe;
-import xyz.e3ndr.endersadditions.items.ToolHoe;
-import xyz.e3ndr.endersadditions.items.ToolPickaxe;
-import xyz.e3ndr.endersadditions.items.ToolShovel;
-import xyz.e3ndr.endersadditions.items.ToolSword;
+import xyz.e3ndr.endersadditions.tools.ToolAxe;
+import xyz.e3ndr.endersadditions.tools.ToolHoe;
+import xyz.e3ndr.endersadditions.tools.ToolPickaxe;
+import xyz.e3ndr.endersadditions.tools.ToolShovel;
+import xyz.e3ndr.endersadditions.tools.ToolSword;
 
 public class Registry {
 

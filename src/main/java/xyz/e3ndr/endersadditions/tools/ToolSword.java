@@ -1,4 +1,4 @@
-package xyz.e3ndr.endersadditions.items;
+package xyz.e3ndr.endersadditions.tools;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemSword;

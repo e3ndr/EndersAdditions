@@ -1,4 +1,4 @@
-package xyz.e3ndr.endersadditions.items;
+package xyz.e3ndr.endersadditions.armor;
 
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
