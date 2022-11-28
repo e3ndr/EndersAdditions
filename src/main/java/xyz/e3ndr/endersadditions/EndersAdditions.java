@@ -68,12 +68,8 @@ public class EndersAdditions {
                 break;
         }
 
-        // Make sure the player is wearing the boots.
-        if ((armorItem == null) || (armorItem.getItem() != armor)) {
-            return false;
-        }
-
-        return true;
+        return (armorItem != null) &&
+            (armorItem.getItem() == armor); // The real check.
     }
 
 }
