@@ -1,9 +1,12 @@
 package xyz.e3ndr.endersadditions.armor;
 
+import java.util.List;
+
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 import xyz.e3ndr.endersadditions.EndersAdditions;
@@ -21,6 +24,19 @@ public class ArmorBouncyBoots extends ArmorBouncyBase {
         GameRegistry.registerItem(this, "bouncy_boots");
 
         MinecraftForge.EVENT_BUS.register(this);
+
+        this.addInformation(null, null, null, bFull3D);
+    }
+
+    @SuppressWarnings({
+            "rawtypes",
+            "unchecked"
+    })
+    @Override
+    public void addInformation(ItemStack itemStack, EntityPlayer player, List lines, boolean p_77624_4_) {
+        if (lines == null) return;
+        lines.add("Makes you bounce when you land on the ground!");
+        lines.add("Also produces a slopping sound when you walk.");
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)

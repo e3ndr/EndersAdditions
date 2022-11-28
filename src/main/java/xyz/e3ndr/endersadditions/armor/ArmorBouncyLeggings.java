@@ -1,9 +1,12 @@
 package xyz.e3ndr.endersadditions.armor;
 
+import java.util.List;
+
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
@@ -22,6 +25,16 @@ public class ArmorBouncyLeggings extends ArmorBouncyBase {
         GameRegistry.registerItem(this, "bouncy_leggings");
 
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    @SuppressWarnings({
+            "rawtypes",
+            "unchecked"
+    })
+    @Override
+    public void addInformation(ItemStack itemStack, EntityPlayer player, List lines, boolean p_77624_4_) {
+        if (lines == null) return;
+        lines.add("Allows you to launch yourself by holding SNEAK and then jumping.");
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
