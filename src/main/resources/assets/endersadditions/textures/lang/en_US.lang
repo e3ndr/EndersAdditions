@@ -1,8 +1,6 @@
-item.EndersAdditions_stick_o_death.name=Stick O' Death
 item.EndersAdditions_magic_dust.name=Magic Dust
-item.EndersAdditions_zoomi_wand.name=Zoomi Wand
 item.EndersAdditions_magic_ingot.name=Magic Ingot
-item.EndersAdditions_wand.name=Wand
+item.EndersAdditions_wand.name=Magic Wand
 tile.EndersAdditions_magic_ore.name=Magic Ore
 tile.EndersAdditions_missing_block.name=Missing Texture Block
 item.EndersAdditions_salt_shaker.name=Salt Shaker
@@ -24,7 +22,6 @@ item.EndersAdditions_magic_shovel.name=Magic Shovel
 item.EndersAdditions_magic_hoe.name=Magic Hoe
 item.EndersAdditions_magic_sword.name=Magic Sword
 item.EndersAdditions_boof.name=Boof
-item.EndersAdditions_slime_wand.name=Slime Wand
 item.EndersAdditions_bouncy_chestplate.name=Bouncy Chestplate
 item.EndersAdditions_bouncy_leggings.name=Bouncy Leggings
 item.EndersAdditions_bouncy_boots.name=Bouncy Boots

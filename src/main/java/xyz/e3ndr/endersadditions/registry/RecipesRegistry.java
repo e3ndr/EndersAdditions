@@ -21,7 +21,7 @@ public class RecipesRegistry {
                 
                 'A', Items.stick,
                 'B', Items.string,
-                'C', Items.iron_ingot
+                'C', Registry.itemMagicIngot
         });
 
         GameRegistry.addRecipe(new ItemStack(Registry.toolRubyAxe), new Object[] {
