@@ -55,7 +55,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "5.0"
+version = "5.1"
 group= "xyz.e3ndr.endersadditions" // https://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "endersadditions"
 

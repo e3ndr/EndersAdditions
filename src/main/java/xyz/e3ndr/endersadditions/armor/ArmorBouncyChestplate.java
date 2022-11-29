@@ -76,8 +76,9 @@ public class ArmorBouncyChestplate extends ArmorBouncyBase {
         motionX *= LAUNCH_FORCE;
         motionZ *= LAUNCH_FORCE;
 
-        // Apply to attacker.
-        attacker.setVelocity(motionX, attacker.motionY, motionZ);
+        // Apply to attacker but keep motionY the same.
+        attacker.motionX = motionX;
+        attacker.motionZ = motionZ;
         attacker.isAirBorne = true;
         attacker.velocityChanged = true; // required for some strange reason
 
