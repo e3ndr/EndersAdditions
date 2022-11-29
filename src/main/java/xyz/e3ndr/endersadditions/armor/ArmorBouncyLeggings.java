@@ -62,15 +62,15 @@ public class ArmorBouncyLeggings extends ArmorBouncyBase {
         final double LAUNCH_FORCE = 2.15;
         final double MIN_Y = .5;
 
-        // Calculate the launch direction.
         final float pitch = player.rotationPitch;
         final float yaw = player.rotationYaw;
 
+        // Calculate the launch direction.
         double motionX = -MathHelper.sin(yaw / 180.0F * PI) * MathHelper.cos(pitch / 180.0F * PI);
         double motionZ = +MathHelper.cos(yaw / 180.0F * PI) * MathHelper.cos(pitch / 180.0F * PI);
         double motionY = -MathHelper.sin((pitch) / 180.0F * PI);
 
-        // Apply force.
+        // Add force.
         motionX *= LAUNCH_FORCE;
         motionY *= LAUNCH_FORCE;
         motionZ *= LAUNCH_FORCE;
