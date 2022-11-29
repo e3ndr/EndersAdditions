@@ -106,25 +106,9 @@ public class ArmorBouncyBoots extends ArmorBouncyBase {
             final double BOUNCE_TRANSLATION_MULTIPLIER = 2.5;
 
             // Make the player "bounce"
-
-            double bounceY = velocity * BOUNCE_DECAY;
-            double bounceX = player.motionX * BOUNCE_TRANSLATION_MULTIPLIER;
-            double bounceZ = player.motionZ * BOUNCE_TRANSLATION_MULTIPLIER;
-
-//            System.out.println("isRemote:        " + player.worldObj.isRemote);
-//            System.out.println("Fake distance:   " + event.distance);
-//            System.out.println("Fall distance:   " + trueDistance);
-//            System.out.println("Fall velocity:   " + velocity);
-//            System.out.println("Fall Motion X:   " + player.motionX);
-//            System.out.println("Fall Motion Z:   " + player.motionZ);
-//            System.out.println("Bounce velocity: " + bounceY);
-//            System.out.println("Bounce motion X: " + bounceX);
-//            System.out.println("Bounce motion Z: " + bounceZ);
-//            System.out.println();
-
-            player.motionY = bounceY;
-            player.motionX = bounceX;
-            player.motionZ = bounceZ;
+            player.motionY = velocity * BOUNCE_DECAY;
+            player.motionX *= BOUNCE_TRANSLATION_MULTIPLIER;
+            player.motionZ *= BOUNCE_TRANSLATION_MULTIPLIER;
             player.isAirBorne = true;
             player.velocityChanged = true;
         }
