@@ -102,8 +102,8 @@ public class ArmorBouncyBoots extends ArmorBouncyBase {
 
         final double MIN_VELOCITY = 0.3;
         if (velocity >= MIN_VELOCITY) {
-            final double BOUNCE_DECAY = 0.55;
-            final double BOUNCE_TRANSLATION_MULTIPLIER = 2.5;
+            final double BOUNCE_DECAY = 0.75;
+            final double BOUNCE_TRANSLATION_MULTIPLIER = 2.65;
 
             // Make the player "bounce"
             player.motionY = velocity * BOUNCE_DECAY;
